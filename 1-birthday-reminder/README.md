@@ -1,24 +1,6 @@
-# 1-birthday-reminder
+Nothing to see here.
 
-## Project setup
-```
-npm install
-```
+The project just displays a list of folks celebrating their birthdays, this project was just to properly understand the idea behind states and how to
+use methods and make myself more farmilar with the vue js framework.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Let's move!! folks!
