@@ -1,21 +1,34 @@
 <template>
   <main>
-    <Lists :people="people" />
+    <section class="container">
+      <h3>{{people.length}} birthdays today</h3>
+      <Lists :people="people" />
+      <button @click="onClick()"> Clear All </button>
+    </section>
   </main>
 </template>
 
 <script>
+
 import Lists from './components/List'
 
 export default {
   
   name: 'App',
+
   components: {
     Lists
   },
+
   data() {
     return{
       people: []
+    }
+  },
+
+  methods: {
+    onClick() {
+      this.people = [ ]
     }
   },
 
@@ -62,6 +75,6 @@ export default {
 }
 </script>
 
-<style src="./assets/index.css">
+<style scoped src="./assets/index.css">
 
 </style>
