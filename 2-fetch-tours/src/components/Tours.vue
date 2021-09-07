@@ -1,12 +1,26 @@
 <template>
-    <div>
-        <h1>I am trying to test my new keyboard</h1>
-    </div>
+    <section>
+        <div class="title">
+            <h2> Our Tours </h2>
+            <div class="underline"></div>
+            <div :key="tour.id" :v-for="tour in tours">
+                <Tour :tour="tour" :removeTour='removeTours' />
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
+import Tour from './Tour'
 export default {
-  name: 'Tours'
+  name: 'Tours',
+  props: {
+    tours: Array,
+    removeTours: Function
+  },
+  components: {
+    Tour
+  }
 }
 </script>
 
