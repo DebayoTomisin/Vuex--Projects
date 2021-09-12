@@ -5,6 +5,7 @@
       <button class='btn' onClick={this.fetchTours()}>refresh</button>
     </div>
   </main>
+
   <main v-else>
     <div v-if="loading">
       <Loading />
@@ -30,7 +31,7 @@ export default {
 
   data () {
     return {
-      loading: false,
+      loading: true,
       tours: []
     }
   },
@@ -41,7 +42,6 @@ export default {
       try {
         const response = await fetch(url)
         const tours = await response.json()
-        console.log(tours)
         this.tours = tours
         console.log('the fetch was a succcess')
       } catch (error) {
@@ -65,6 +65,11 @@ export default {
       return (
         <div><h2>No Tours Left </h2> <button class='btn' onClick={this.fetchTours()}>refresh</button> </div>
       )
+    },
+
+    removeTour (id) {
+      const newTours = this.tours.filter(tour => tour.id === id)
+      this.tours = newTours
     }
   },
 
