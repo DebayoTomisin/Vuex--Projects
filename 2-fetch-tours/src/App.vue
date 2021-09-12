@@ -7,11 +7,11 @@
   </main>
 
   <main v-else>
-    <div v-if="loading">
+    <div v-if="loading === true">
       <Loading />
     </div>
     <div v-else>
-      <Tours :tours="tours" />
+      <Tours :tours="tours" @removeTour = "removeTour" />
     </div>
   </main>
 </template>
@@ -25,7 +25,6 @@ const url = 'https://course-api.com/react-tours-project'
 export default {
   name: 'App',
   components: {
-    Tours,
     Loading
   },
 
@@ -38,7 +37,7 @@ export default {
 
   methods: {
     async fetchTours () {
-      this.loading = true
+      this.loading = false
       try {
         const response = await fetch(url)
         const tours = await response.json()
@@ -74,7 +73,7 @@ export default {
   },
 
   async created () {
-    this.loading = false
+    this.loading = true
     await this.fetchTours()
   }
 

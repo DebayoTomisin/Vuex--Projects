@@ -14,6 +14,7 @@
 import Tour from './Tour'
 export default {
   name: 'Tours',
+
   props: {
     tours: Array,
     removeTours: Function

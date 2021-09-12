@@ -5,10 +5,10 @@
             <div class="tour-info">
                 <h4>{{tour.name}}</h4>
                 <h4 class="tour-price">${{tour.price}}</h4>
-                <p :v-if="readMore">
+                <p v-if="readMore">
                     {{tour.info}}
                 </p>
-                <p :v-else="readMore">
+                <p v-else>
                     {{`${tour.info.substring(0, 100)}...`}} <button @click="setReadMore()"></button>
                 </p>
             </div>
@@ -33,6 +33,9 @@ export default {
   methods: {
     setReadMore () {
       this.readMore = !this.readMore
+    },
+    onDelete (id) {
+      this.$emit('delete-tour', id)
     }
   }
 
