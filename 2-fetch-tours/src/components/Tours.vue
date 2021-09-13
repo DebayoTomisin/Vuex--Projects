@@ -3,8 +3,8 @@
         <div class="title">
             <h2> Our Tours </h2>
             <div class="underline"></div>
-            <div :key="tour.id" :v-for="tour in tours">
-                <Tour :tour="tour" :removeTour='removeTours' />
+            <div :key="tour.id" v-for="tour in tours">
+              <Tour :tour="tour" :removeTour='removeTours' />
             </div>
         </div>
     </section>
@@ -23,8 +23,9 @@ export default {
     Tour
   }
 }
+
 </script>
 
-<style src="../assets/index.css" scoped>
+<style src="../assets/index.css" >
 
 </style>

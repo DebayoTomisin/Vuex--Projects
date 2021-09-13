@@ -1,5 +1,5 @@
 <template>
-  <main v-if="tours.length === 0">
+  <main v-if="loading === true">
     <div>
       <h2>No Tours Left </h2>
       <button class='btn' onClick={this.fetchTours()}>refresh</button>
@@ -7,7 +7,7 @@
   </main>
 
   <main v-else>
-    <div v-if="loading === true">
+    <div v-if="tours.length === 0">
       <Loading />
     </div>
     <div v-else>
@@ -25,7 +25,8 @@ const url = 'https://course-api.com/react-tours-project'
 export default {
   name: 'App',
   components: {
-    Loading
+    Loading,
+    Tours
   },
 
   data () {
@@ -81,6 +82,6 @@ export default {
 
 </script>
 
-<style src="./assets/index.css" scoped>
+<style src="./assets/index.css">
 
 </style>
