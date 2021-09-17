@@ -20,8 +20,7 @@
 export default {
   name: 'Tour',
   props: {
-    tour: Object,
-    removeTours: Function
+    tour: Object
   },
 
   data () {
