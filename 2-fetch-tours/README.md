@@ -1,24 +1,4 @@
-# 2-fetch-tours
+This is a simple project for fetching and displaying data on tourist destinations and the possible cost implications of the trips, with users also given the choice to opt out of the tour.
 
-## Project setup
-```
-npm install
-```
+I think this project really helped stretch my knowldege with props and components and the general feel with vue. Not done yet but progress.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
