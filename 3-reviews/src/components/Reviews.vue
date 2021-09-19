@@ -1,11 +1,14 @@
 <template>
     <article class="review">
-
+        <div class="img-container">
+            <img :src={image} :alt="name"/>
+        </div>
     </article>
 </template>
 
 <script>
     import reviewData from './data'
+
     export default {
         name: 'Reviews',
         data () {
@@ -16,6 +19,7 @@
         },
         created () {
             this.data = reviewData
+            const {name, job, image, text} = this.data[this.index]
         },
         methods: {
             checkNumbers (number) {
@@ -34,7 +38,21 @@
                     randomNumber += 1
                 }
                 this.index = this.checkNumbers(randomNumber)
-            }
+            },
+
+            prevPerson () {
+                this.index = () => {
+                    let newIndex = this.index + 1
+                    return this.checkNumbers(newIndex)
+                }
+            },
+
+            nextPerson () {
+                this.index= () => {
+                    let newIndex = this.index - 1
+                    return this.checkNumbers(newIndex)
+                }
+            },
 
         }
     }
