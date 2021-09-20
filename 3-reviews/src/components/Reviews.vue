@@ -1,7 +1,16 @@
 <template>
     <article class="review">
         <div class="img-container">
-            <img :src={image} :alt="name"/>
+            <img :src="info.image" :alt="info.name" class="person-img"/>
+        </div>
+        <h4 class="author">{{info.name}}</h4>
+        <p class="job">{{info.job}}</p>
+        <p class="info">{{info.text}}</p>
+
+        <div class="button-container">
+            <button class="prev-btn" @click="prevPerson">Previous Btn</button>
+            <button class="next-btn" @click="nextPerson">Next Button</button>
+            <button class="random-btn" @click="randomPerson">surprise me</button>
         </div>
     </article>
 </template>
@@ -14,12 +23,24 @@
         data () {
             return{
                 data: [],
-                index: 0
+                index: 0,
+                name: '',
+                job: '',
+                image: '',
+                text: '',
+                info: {}
             }
         },
         created () {
             this.data = reviewData
             const {name, job, image, text} = this.data[this.index]
+            
+            this.info = {
+                name: name,
+                job: job,
+                image: image,
+                info: text,
+            }
         },
         methods: {
             checkNumbers (number) {
@@ -38,6 +59,7 @@
                     randomNumber += 1
                 }
                 this.index = this.checkNumbers(randomNumber)
+                console.log(this.index)
             },
 
             prevPerson () {
