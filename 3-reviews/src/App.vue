@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="contiainer">
+    <section class="container">
       <h2>Our Reviews </h2>
       <div class="underline"></div>
       <Reviews  />
@@ -15,9 +15,7 @@ export default {
   name: 'App',
   components: {
     Reviews
-  },
-  
-  
+  },  
 }
 </script>
 
