@@ -49,30 +49,45 @@
                 console.log(this.index)
             },
 
+            // prevPerson () {
+            //     this.index = () => {
+            //         let newIndex = this.index + 1
+            //         this.index = this.checkNumbers(newIndex)
+            //         console.log(this.index)
+            //     } 
+            // },
+
             prevPerson () {
-                this.index = () => {
-                    let newIndex = this.index + 1
-                    this.index = this.checkNumbers(newIndex)
-                    console.log(this.index)
-                }
-               
+                let newIndex
+                newIndex = this.index - 1
+                this.index = this.checkNumbers(newIndex)
             },
+
 
             nextPerson () {
-                this.index= () => {
-                    let newIndex = this.index - 1
-                    this.index = this.checkNumbers(newIndex)
-                    console.log(this.index)
-                }
-                
-            },
+                let newIndex
+                newIndex = this.index + 1
+                this.index = this.checkNumbers(newIndex)
+            }
 
+        },
+
+        beforeCreate() {
+            console.log('before create hook has been called')
+        },
+
+        created() {
+            alert(`the current index value is: ${this.index}`)
         },
         
         mounted () {
             this.data = reviewData
             this.info = this.data[this.index]
+            {{console.log(this.index)}}
         },
+        updated() {
+            this.info = this.data[this.index]
+        }
     }
 
 </script>
