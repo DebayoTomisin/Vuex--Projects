@@ -1,12 +1,12 @@
 <template>
-    <article :key="item.id" v-for='item in data' class="review">
+    <article class="review">
        
         <div class="img-container">
-            <img :src="item.image" :alt="item.name" class="person-img"/>
+            <img :src="info.image" :alt="info.name" class="person-img"/>
         </div>
-        <h4 class="author">{{item.name}}</h4>
-        <p class="job">{{item.job}}</p>
-        <p class="info">{{item.info}}</p>
+        <h4 class="author">{{info.name}}</h4>
+        <p class="job">{{info.job}}</p>
+        <p class="info">{{info.info}}</p>
 
         <div class="button-container">
             <button class="prev-btn" @click="prevPerson()">Previous Btn</button>
@@ -25,6 +25,7 @@
             return{
                 data: [],
                 index: 0,
+                info: {}
             }
         },
        
@@ -45,31 +46,37 @@
                     randomNumber += 1
                 }
                 this.index = this.checkNumbers(randomNumber)
+                console.log(this.index)
             },
 
             prevPerson () {
                 this.index = () => {
                     let newIndex = this.index + 1
                     this.index = this.checkNumbers(newIndex)
+                    console.log(this.index)
                 }
+               
             },
 
             nextPerson () {
                 this.index= () => {
                     let newIndex = this.index - 1
                     this.index = this.checkNumbers(newIndex)
+                    console.log(this.index)
                 }
+                
             },
 
         },
         
-        created () {
+        mounted () {
             this.data = reviewData
+            this.info = this.data[this.index]
         },
     }
 
 </script>
 
-<style src='../assets/index.css' >
+<style src='../assets/index.css'>
 
 </style>
