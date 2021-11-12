@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main>
+    <div class='container'>
+      <h3>Questions and Answers about container</h3>
+      <section class='info' v-for='question in data' :key='question.id'>
+        <Question :questions="question" :toggleInfo='toggleInfo'  />
+      </section>
+    </div>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Question from './components/Question.vue'
+import questions from './components/data.js'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Question
+  },
+  data () {
+    return {
+      data : [],
+      showInfo: false
+    }
+  },
+
+  methods: {
+    toggleInfo() {
+      this.showInfo = !this.showInfo
+    }
+  },
+
+  created(){
+    this.data = questions
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style src='./assets/index.css' scoped>
+
 </style>
