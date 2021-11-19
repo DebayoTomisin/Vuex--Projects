@@ -3,7 +3,7 @@
     <div class='container'>
       <h3>Questions and Answers about container</h3>
       <section class='info' v-for='question in data' :key='question.id'>
-        <Question :question="question" @toggleInfo='toggleInfo' showInfo="showInfo"  />
+        <Question :question="question" @toggleInfo='toggleInfo' :showInfo="showInfo"  />
       </section>
     </div>
   </main>
