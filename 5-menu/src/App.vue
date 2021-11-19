@@ -5,7 +5,7 @@
     </div>
     <div class="underline"></div>
     <Categories :categories="categories" @filterCat="filterCats" />
-    <MenuList :menu ="menu" />
+    <MenuList :menu="menu" />
   </main>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   name: 'App',
   components: {
     Categories,
-    MenuList
+    MenuList,
   },
   data(){
     return{
@@ -26,7 +26,7 @@ export default {
       categories: []
     }
   },
-  created() {
+  mounted () {
     this.categories = ['all', ...new Set(Menu.map(item => item.category))]
   },
   methods: {
