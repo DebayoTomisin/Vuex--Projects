@@ -4,7 +4,7 @@
       <h2>Our Menu</h2>
     </div>
     <div class="underline"></div>
-    <Categories :categories="categories" @filterCat="filterCats" />
+    <Categories :categories="categories" :filter-cat="filterCat" />
     <MenuList :menu="menu" />
   </main>
 </template>
@@ -30,7 +30,7 @@ export default {
     this.categories = ['all', ...new Set(Menu.map(item => item.category))]
   },
   methods: {
-    filterCats (category) {
+    filterCat (category) {
       if (category == 'all'){
         this.menu = Menu
         return

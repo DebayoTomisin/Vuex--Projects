@@ -1,7 +1,7 @@
 <template>
     <div class="section-center" v-for="(menu, idx) in menu" :key='idx'>
         <article class="menu-item">
-            <img :src="menu.img" :alt='menu.title'/>
+            <img :src="menu.img" :alt='menu.title' class="photo"/>
             <header>
                 <h4>{{menu.title}}</h4>
                 <h4 class="price">{{menu.price }} </h4>
@@ -18,7 +18,7 @@ export default {
         menu: Array
     },
     created() {
-       console.log(this.menu)
+       
     }
 
 }

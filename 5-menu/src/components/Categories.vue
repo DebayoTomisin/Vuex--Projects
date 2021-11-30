@@ -1,6 +1,6 @@
 <template>
     <div class='btn-container' v-for="(cat, idx) in categories"  :key="idx">
-        <button class="filter-btn" type="button" @click="flterCats(cat)">
+        <button class="filter-btn" type="button" @click="filterCat(cat)">
            {{ cat }}
         </button>
     </div>
@@ -17,7 +17,6 @@ export default {
    created() {
        
    },
-   emit : ['filterCat']
 }
 
 </script>
