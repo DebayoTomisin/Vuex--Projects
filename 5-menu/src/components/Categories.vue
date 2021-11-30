@@ -1,10 +1,5 @@
 <template>
-    <!-- <div class="btn-container" :v-for="cat in categories">
-        <button class="filter-btn" type='button'>
-            {{ cat }}
-        </button>
-    </div> -->
-    <div class='btn-container' :v-for="(cat, idx) in categories"  :key="idx">
+    <div class='btn-container' v-for="(cat, idx) in categories"  :key="idx">
         <button class="filter-btn" type="button" @click="$emit('flterCat()')">
            {{ cat }}
         </button>
