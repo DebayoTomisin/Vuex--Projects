@@ -18,7 +18,7 @@ export default {
         menu: Array
     },
     created() {
-       
+       console.log(this.menu)
     }
 
 }
