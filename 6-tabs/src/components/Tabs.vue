@@ -2,8 +2,15 @@
     <section v-if="loading" class="section-loading">
         <h2>Loading... </h2>
     </section>
-    <section v-if="!loading" class="dection">
-        <h4>Make Room</h4>
+    <section v-if="!loading" class="section">
+        <div class="title">
+            <h2>Experience </h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="jobs-center">
+            
+        </div>
     </section>
 </template>
 
@@ -12,7 +19,7 @@
         name: 'Tabs',
         data() {
             return {
-                jobs: {},
+                jobs: [],
                 value: 0,
                 loading: true,
                 url : 'https://course-api.com/react-tabs-project',
@@ -20,22 +27,17 @@
             }
         },
         methods: {
-            fetchJobs : async () => {
+            async fetchJobs() {
                 const response = await fetch(this.url)
                 const data = await response.json(response)
-
                 this.jobs = data
-                this.loading = false
             }
         },
-        watch: {
-            handler() {
-                this.fetchJobs()
-            }
-        },
-        mounted() {
+        
+        created() {
             this.fetchJobs()
             console.log(this.jobs)
+            this.loading = false
         }
     }
 </script>
