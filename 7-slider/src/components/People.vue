@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <h2>Nothing works amigo</h2>
     </div>
 </template>
 
