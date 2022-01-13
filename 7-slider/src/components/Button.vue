@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h2>Indulge me</h2>
+        <button class="prev">-</button>
+        <button class="next">+</button>
     </div>
 </template>
 
@@ -12,11 +13,12 @@
 
             }
         },
+        props: ["prevSlide", "nextSlide"],            
         methods: {},
         created() {},
     }
 </script>
 
-<style lang="scss" scoped>
+<style>
 
 </style>

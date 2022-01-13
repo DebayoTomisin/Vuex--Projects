@@ -2,7 +2,7 @@
   <section class="section">
     <div class="title"> <h2><span>/</span>Reviews</h2></div>
     <div class="section-center">
-      <People />
+      <People :people="peopleData" :index="index" />
       <Button />
     </div>
   </section>
@@ -16,7 +16,7 @@ export default {
   name: 'App',
   components: {
     People,
-    Button
+    Button,
   },
   data() {
     return {
