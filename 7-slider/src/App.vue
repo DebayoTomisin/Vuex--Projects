@@ -28,7 +28,6 @@ export default {
   methods: {
     nextSlide () {
       function setNextIndex() {
-        console.log(this.index)
         let index = this.index + 1
         if(index < this.peopleData.length - 1) {
           index = 0
@@ -62,7 +61,7 @@ export default {
   computed () {},
 
   watch() {
-    "index", function () {
+    "this.index", function () {
       this.setSlider()
     }
     console.log(this.index)
