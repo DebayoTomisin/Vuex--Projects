@@ -18,26 +18,6 @@
         },
         props: ['people', 'index'],
         computed: {},
-        // methods: {
-        //     getValue(){
-        //         let position = 'nextSlide'
-        //         this.people.map((person, personIndex) => {
-        //             if(personIndex == this.value){
-        //                 position = "activeSlide"
-        //             }
-                    
-        //             if(personIndex === this.value - 1 || (this.value == 0 && personIndex === this.people.length - 1)) {
-        //                 position= "lastSlide"
-        //             }
-        //         })
-        //         return position
-        //     }
-            
-        // },
-        // updated () {
-        //     this.position = this.getValue()
-        //     console.log(this.position)
-        // },
     }
 </script>
 

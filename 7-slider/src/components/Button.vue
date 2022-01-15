@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button class="prev">-</button>
-        <button class="next">+</button>
+        <button @click="previousSlide" class="prev">-</button>
+        <button @click="afterSlide" class="next">+</button>
     </div>
 </template>
 
@@ -12,10 +12,17 @@
             return {
 
             }
-        },
-        props: ["prevSlide", "nextSlide"],            
+        },          
         methods: {},
-        created() {},
+        props:["previousSlide", "afterSlide"],
+        mounted(){
+            this.previousSlide(),
+            this.afterSlide()
+        },
+
+        created() {
+            this.$emit('created')
+        },
     }
 </script>
 

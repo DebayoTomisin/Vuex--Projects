@@ -3,7 +3,7 @@
     <div class="title"> <h2><span>/</span>Reviews</h2></div>
     <div class="section-center">
       <People :people="peopleData" :index="index" v-model="index"/>
-      <Button />
+      <Button @created="handleCreate" :previousSlide="previousSlide" :afterSlide="afterSlide" />
     </div>
   </section>
 </template>
@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       peopleData: data,
-      index: 0
+      index: 0,
     }
   },
 
@@ -37,12 +37,17 @@ export default {
     //   this.index = setNextIndex()
     // },
 
+    handleCreate(){
+      console.log('created element')
+    },
+
     afterSlide () {
       let index = this.index + 1
-      if (index < this.peopleData.length - 1){
+      if (index > this.peopleData.length - 1){
         index = 0
       }
       this.index = index
+      console.log(this.index)
     },
 
     // prevSlide() {
@@ -80,8 +85,8 @@ export default {
     "index", function () {
       this.setSlider()
     }
-    console.log(this.index)
   },
+
 }
 </script>
 
