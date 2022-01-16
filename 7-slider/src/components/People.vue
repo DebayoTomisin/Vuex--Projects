@@ -13,11 +13,13 @@
         data(){
             return{
                 position: 'activeSlide',
-                value: this.index
+                value: 0
             }
         },
         props: ['people', 'index'],
-        computed: {},
+        updated() {
+            this.value = this.index
+        }
     }
 </script>
 

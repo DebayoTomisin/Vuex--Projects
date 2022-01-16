@@ -7,22 +7,16 @@
 
 <script>
     export default {
-        name: 'Button',
-        data() {
-            return {
+        name: 'Button',         
+        methods: {
+            previousSlide() {
+                this.$emit('previous-slide')
+            },
 
+            afterSlide () {
+                this.$emit('next-slide')
             }
-        },          
-        methods: {},
-        props:["previousSlide", "afterSlide"],
-        mounted(){
-            this.previousSlide(),
-            this.afterSlide()
-        },
-
-        created() {
-            this.$emit('created')
-        },
+        },        
     }
 </script>
 
