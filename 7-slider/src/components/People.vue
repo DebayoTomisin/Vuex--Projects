@@ -17,18 +17,8 @@
             }
         },
         props: ['people', 'index'],
-        computed: {
-            Indexvalue: {
-                get() {
-                    return this.value
-                },
-                set(val) {
-                    return this.value = val
-                }
-            }
-        },
-        watch: {
-            
+        updated() {
+            this.value = this.index
         }
     }
 </script>

@@ -32,7 +32,6 @@ export default {
         index = 0
       }
       this.index = index
-      console.log(this.index)
     },
 
 
@@ -42,7 +41,6 @@ export default {
         index = this.peopleData.length - 1
       }
       this.index = index
-      console.log(this.index)
     },
 
     setSlider () {
