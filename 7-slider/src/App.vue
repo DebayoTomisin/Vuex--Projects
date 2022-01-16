@@ -53,13 +53,7 @@ export default {
     }
   },
 
-  computed () {},
-
-  watch() {
-    "index", function () {
-      this.setSlider()
-    }
-  },
+  updated () {},
 
 }
 </script>
