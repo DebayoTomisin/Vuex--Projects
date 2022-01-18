@@ -1,10 +1,10 @@
 <template>
   <section class="section-center">
-    <form class="grocery-form">
+    <form @submit.prevent="handleSubmit" class="grocery-form">
       <h3>Grocery Bud</h3>
       <div class="form-control">
         <input type="text" placeholder="Enter a Value" v-model="name" class="grocery">
-        <button class="submit-btn" >{{isEditting ? 'edit' : 'submit'}}</button>
+        <button class="submit-btn" type="submit" >{{isEditting ? 'edit' : 'submit'}}</button>
       </div>
     </form>
   </section>
@@ -64,7 +64,28 @@ export default {
     },
 
     handleSubmit () {
-      
+      console.log("Allow me to enjoy myself")
+
+      if (!this.name){
+        this.showAlert(true, 'Enter a grocery item', 'danger')
+      }
+      else if (this.name && this.isEditting) {
+        let list = this.list.map((item) => {
+          if(item.id === this.editId){
+            return {...item, title: this.name}
+          }
+          this.list = list
+        })
+        this.name = ""
+        this.editId = null
+        this.isEditting = false
+        this.showAlert(true, 'Value has changed', 'success')
+      }
+      else {
+        const newItem = { id: new Date().getTime().toString(), title: this.name}
+        this.list = [...this.list, newItem]
+        this.name = ""
+      }
     }
   },
   computed: {
@@ -73,6 +94,9 @@ export default {
   created () {
     this.list = this.getLocalStorage()
   },
+  // updated() {
+  //   console.log(this.list)
+  // }
 }
 </script>
 
