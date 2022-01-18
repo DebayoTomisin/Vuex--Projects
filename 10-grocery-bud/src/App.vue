@@ -89,14 +89,17 @@ export default {
     }
   },
   computed: {
-    
+    // setLocalStorage () {
+    //   return localStorage.setItem('list',JSON.stringify(this.list))
+    // },
   },
   created () {
     this.list = this.getLocalStorage()
   },
-  // updated() {
-  //   console.log(this.list)
-  // }
+
+  updated() {
+    localStorage.setItem('list',JSON.stringify(this.list))
+  }
 }
 </script>
 
