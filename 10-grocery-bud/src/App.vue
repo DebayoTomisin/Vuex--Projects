@@ -1,5 +1,6 @@
 <template>
   <section class="section-center">
+    <Alert v-show="alert.show" :list="list" :type="alert.type" :msg="alert.msg" v-on:remove-alert="showAlert" />
     <form @submit.prevent="handleSubmit" class="grocery-form">
       <h3>Grocery Bud</h3>
       <div class="form-control">
@@ -7,13 +8,22 @@
         <button class="submit-btn" type="submit" >{{isEditting ? 'edit' : 'submit'}}</button>
       </div>
     </form>
+
+    <div v-show="list.length > 0" class="grocery-containe">
+      <List :items="list" />
+      <button @click="clearList" class="clear-btn">clear items</button>
+    </div>
   </section>
 </template>
 
 <script>
+import Alert from "./components/Alert.vue"
+import List from './components/List.vue'
 export default {
   name: 'App',
   components: {
+    Alert,
+    List
   },
   data() {
     return {
@@ -99,6 +109,7 @@ export default {
 
   updated() {
     localStorage.setItem('list',JSON.stringify(this.list))
+    this.list = this.getLocalStorage()
   }
 }
 </script>
