@@ -10,7 +10,7 @@
     </form>
 
     <div v-show="list.length > 0" class="grocery-containe">
-      <List :items="list" />
+      <List :items="list" v-on:edit-item="editList(id)" v-on:remove-item="removeItem(id)" />
       <button @click="clearList" class="clear-btn">clear items</button>
     </div>
   </section>

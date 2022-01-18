@@ -3,10 +3,10 @@
         <article>
             <p class="title">{{item.id}}</p>
             <div class="btn-container">
-                <button class="edit-btn" type="button">
+                <button class="edit-btn" type="button" @click="editItem(item.id)">
                     <img src="../assets/editing.png" alt="edit" class="icons" />
                 </button>
-                <button class="delete-btn" type="button">
+                <button class="delete-btn" type="button" @click="removeItem(item.id)">
                     <img src="../assets/delete.png" alt="delete" class="icons" />
                 </button>
             </div>
@@ -20,8 +20,13 @@ export default {
     props: {
         items: Array
     },
-    mounted() {
-        console.log(this.items)
+    methods: {
+        editItem(id) {
+            this.$emit("edit-item", id)
+        },
+        removeItem(id) {
+            this.$emit("remove-item", id)
+        }
     }
 }
 </script>
