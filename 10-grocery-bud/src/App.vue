@@ -66,6 +66,7 @@ export default {
       this.isEditting = true
       this.editId = id
       this.name = specItem.title
+      console.log(this.editId)
     },
 
     removeItem (id) {
@@ -82,8 +83,8 @@ export default {
           if(item.id === this.editId){
             return {...item, title: this.name}
           }
-          this.list = list
         })
+        this.list = list
         this.name = ""
         this.editId = null
         this.isEditting = false
