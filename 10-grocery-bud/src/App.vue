@@ -66,7 +66,6 @@ export default {
       this.isEditting = true
       this.editId = id
       this.name = specItem.title
-      console.log(this.editId)
     },
 
     removeItem (id) {
@@ -80,8 +79,8 @@ export default {
       }
       else if (this.name && this.isEditting) {
         let list = this.list.map((item) => {
-          if(item.id === this.editId){
-            return {...item, title: this.name}
+           if(item.id === this.editId) {
+           return {...item, title: this.name}
           }
         })
         this.list = list
