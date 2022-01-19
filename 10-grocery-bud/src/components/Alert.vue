@@ -15,14 +15,14 @@ export default {
             this.$$emit("remove-alert")
         }
     },
-    watch: {
-        'this.list' : {
-            handler() {
-                const timeout = setTimeout(() => this.removeAlert(), 3000)
-                return () => clearTimeout(timeout)
-            }
-        }
-    },
+    // watch: {
+    //     'this.msg' : {
+    //         handler() {
+    //             const timeout = setTimeout(() => this.removeAlert(), 3000)
+    //             return () => clearTimeout(timeout)
+    //         }
+    //     }
+    // },
 }
 </script>
 

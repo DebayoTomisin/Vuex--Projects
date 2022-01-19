@@ -10,7 +10,7 @@
     </form>
 
     <div v-show="list.length > 0" class="grocery-containe">
-      <List :items="list" v-on:edit-item="editList(id)" v-on:remove-item="removeItem(id)" />
+      <List :items="list" v-on:edit-item="editList" v-on:remove-item="removeItem" />
       <button @click="clearList" class="clear-btn">clear items</button>
     </div>
   </section>
@@ -74,8 +74,6 @@ export default {
     },
 
     handleSubmit () {
-      console.log("Allow me to enjoy myself")
-
       if (!this.name){
         this.showAlert(true, 'Enter a grocery item', 'danger')
       }
@@ -107,10 +105,11 @@ export default {
     this.list = this.getLocalStorage()
   },
 
-  updated() {
+  beforeUpdate() {
     localStorage.setItem('list',JSON.stringify(this.list))
     this.list = this.getLocalStorage()
-  }
+    //console.log(this.list)
+  },
 }
 </script>
 
