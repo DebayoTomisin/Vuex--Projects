@@ -3,7 +3,7 @@
         <div class="nav-center">
             <div class="nav-header">
                 <img src="../assets/logo.svg" alt='logo' />
-                <button class="nav-toggle" @click="toggleLinks()">
+                <button class="nav-toggle" @click="toggleLinks">
                     <img src='../assets/bars-svgrepo-com.svg' alt='bars' />
                 </button>
             </div>

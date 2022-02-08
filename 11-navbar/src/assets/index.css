@@ -152,8 +152,8 @@ Variables
   .nav-toggle {
     font-size: 1.5rem;
     color: var(--clr-primary-5);
-    background: transparent;
-    border-color: transparent;
+    background: var(--clr-primary-1);
+    border-color: var(--clr-primary-1);
     transition: var(--transition);
     cursor: pointer;
   }
